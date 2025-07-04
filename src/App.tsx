@@ -1,6 +1,7 @@
 // File: src/App.tsx
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Builder from './pages/Builder';
 import Templates from './pages/Templates';
@@ -10,6 +11,7 @@ import Contact from './pages/Contact';
 const App: React.FC = () => {
   return (
     <Router>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/builder" element={<Builder />} />
