@@ -17,14 +17,15 @@ const Home: React.FC = () => {
         </button>
       </Link>
 
-      <div className="mt-10">
-        <img
-          src="https://via.placeholder.com/600x350?text=Resume+Preview"
-          alt="Resume preview"
-          className="rounded-xl shadow-lg border max-w-full"
-        />
-      </div>
-    </div>
+      <div className="mt-12 max-w-4xl w-full px-4">
+  <div className="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-lg border border-gray-200 bg-white">
+    <img
+      src="https://via.placeholder.com/800x500.png?text=Your+Resume+Preview"
+      alt="Resume Preview"
+      className="object-cover w-full h-full"
+    />
+  </div>
+</div>
   );
 };
 
