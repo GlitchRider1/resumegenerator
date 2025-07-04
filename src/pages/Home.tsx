@@ -4,30 +4,25 @@ import { Link } from 'react-router-dom';
 
 const Home: React.FC = () => {
   return (
-    <div className="px-6 py-12 max-w-4xl mx-auto text-center">
-      <h1 className="text-4xl font-bold mb-4 text-blue-800">Welcome to ResumeCraft</h1>
-      <p className="text-lg text-gray-700 mb-8">
-        Create stunning, professional resumes and cover letters in just a few minutes.
-        No design skills needed.
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-white flex flex-col items-center justify-center text-center px-6">
+      <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-800 mb-4">
+        Create a Stunning Resume in Minutes
+      </h1>
+      <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mb-6">
+        ResumeCraft helps you build professional, ATS-friendly resumes with ease — no design skills needed.
       </p>
+      <Link to="/builder">
+        <button className="bg-blue-600 hover:bg-blue-700 text-white text-lg font-medium py-3 px-6 rounded-xl shadow transition">
+          Get Started Now
+        </button>
+      </Link>
 
-      <div className="flex flex-col sm:flex-row gap-4 justify-center">
-        <Link
-          to="/builder"
-          className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded text-lg"
-        >
-          Get Started
-        </Link>
-        <Link
-          to="/templates"
-          className="bg-gray-100 hover:bg-gray-200 text-blue-700 border border-blue-600 py-3 px-6 rounded text-lg"
-        >
-          Browse Templates
-        </Link>
-      </div>
-
-      <div className="mt-12 text-gray-500 text-sm">
-        💡 Tip: Start with our resume builder, then export as PDF instantly!
+      <div className="mt-10">
+        <img
+          src="https://via.placeholder.com/600x350?text=Resume+Preview"
+          alt="Resume preview"
+          className="rounded-xl shadow-lg border max-w-full"
+        />
       </div>
     </div>
   );
