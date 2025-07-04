@@ -1,4 +1,3 @@
-// File: src/pages/Home.tsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
@@ -7,7 +6,7 @@ const Home: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-white to-blue-50 text-gray-800">
       <div className="max-w-6xl mx-auto px-6 py-20 flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
-        {/* Left Text */}
+        {/* Left Content */}
         <div className="flex-1 text-center lg:text-left">
           <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
             Create Your Resume with Style
@@ -23,32 +22,32 @@ const Home: React.FC = () => {
           </Link>
         </div>
 
-        {/* Right Resume Preview */}
+        {/* Resume Preview */}
         <Link to="/builder" className="flex-1">
-          <div className="rounded-xl overflow-hidden shadow-2xl border border-gray-200 hover:scale-105 transition-transform duration-300">
+          <div className="rounded-xl overflow-hidden shadow-xl border border-gray-200 hover:scale-105 transition-transform duration-300">
             <img
-  src="https://via.placeholder.com/600x400.png?text=Resume+Preview"
-  alt="Resume Preview"
+              src="https://raw.githubusercontent.com/GlitchRider1/assets/main/resume-preview.png"
+              alt="Resume Preview"
               className="w-full h-auto object-cover"
             />
           </div>
         </Link>
       </div>
 
-      {/* Features */}
+      {/* Features Section */}
       <div className="bg-white py-16 px-6 mt-12">
         <div className="max-w-5xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-10 text-center">
           <div>
             <h3 className="text-xl font-semibold mb-2">Easy to Use</h3>
-            <p className="text-gray-600">No design skills needed. Just fill in your info and download.</p>
+            <p className="text-gray-600">Just fill in your info and download — no design skills needed.</p>
           </div>
           <div>
             <h3 className="text-xl font-semibold mb-2">Professional Templates</h3>
             <p className="text-gray-600">Designed by experts to grab recruiter attention.</p>
           </div>
           <div>
-            <h3 className="text-xl font-semibold mb-2">Real-Time Preview</h3>
-            <p className="text-gray-600">Instantly see how your resume will look — no guessing.</p>
+            <h3 className="text-xl font-semibold mb-2">Live Preview</h3>
+            <p className="text-gray-600">See exactly how your resume will look before downloading.</p>
           </div>
         </div>
       </div>
