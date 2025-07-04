@@ -27,8 +27,8 @@ const Home: React.FC = () => {
         <Link to="/builder" className="flex-1">
           <div className="rounded-xl overflow-hidden shadow-2xl border border-gray-200 hover:scale-105 transition-transform duration-300">
             <img
-              src="https://resumegenius.com/wp-content/uploads/resume/resume-examples/classic-resume-example.png"
-              alt="Resume Preview"
+  src="https://via.placeholder.com/600x400.png?text=Resume+Preview"
+  alt="Resume Preview"
               className="w-full h-auto object-cover"
             />
           </div>
