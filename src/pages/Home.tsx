@@ -18,14 +18,15 @@ const Home: React.FC = () => {
       </Link>
 
       <div className="mt-10 w-full max-w-4xl px-4">
-  <div className="w-full rounded-xl overflow-hidden shadow-lg border border-gray-200">
-    <img
-      src="https://via.placeholder.com/1000x600.png?text=Resume+Preview"
-      alt="Resume Preview"
-      className="w-full h-auto object-cover"
-    />
-  </div>
-</div>
+        <div className="w-full rounded-xl overflow-hidden shadow-lg border border-gray-200">
+          <img
+            src="https://via.placeholder.com/1000x600.png?text=Resume+Preview"
+            alt="Resume Preview"
+            className="w-full h-auto object-cover"
+          />
+        </div>
+      </div>
+    </div>
   );
 };
 
