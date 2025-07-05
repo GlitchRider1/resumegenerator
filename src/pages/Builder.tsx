@@ -1,20 +1,17 @@
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
 import ClassicTemplate from '../templates/ClassicTemplate';
 import ModernTemplate from '../templates/ModernTemplate';
 import CreativeTemplate from '../templates/CreativeTemplate';
 
 const Builder: React.FC = () => {
-  const location = useLocation();
-  const searchParams = new URLSearchParams(location.search);
-  const selectedTemplate = searchParams.get('template') || 'classic';
-
   const [form, setForm] = useState({
     name: '',
     job: '',
     skills: '',
     experience: '',
   });
+
+  const [selectedTemplate, setSelectedTemplate] = useState('classic');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -24,6 +21,18 @@ const Builder: React.FC = () => {
     <div className="max-w-6xl mx-auto p-6 grid md:grid-cols-2 gap-6">
       <div>
         <h2 className="text-2xl font-semibold mb-4">Resume Builder</h2>
+
+        <label className="block mb-2 font-medium">Choose Template</label>
+        <select
+          value={selectedTemplate}
+          onChange={(e) => setSelectedTemplate(e.target.value)}
+          className="input mb-4 w-full"
+        >
+          <option value="classic">Classic</option>
+          <option value="modern">Modern</option>
+          <option value="creative">Creative</option>
+        </select>
+
         <input
           className="input mb-3 w-full"
           name="name"
