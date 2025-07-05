@@ -1,49 +1,38 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import ClassicTemplate from '../templates/ClassicTemplate';
 
 const Templates: React.FC = () => {
-  const templates = [
-    {
-      id: 'classic',
-      name: 'Classic',
-      description: 'Clean, timeless format for professionals.',
-    },
-    {
-      id: 'modern',
-      name: 'Modern',
-      description: 'Stylish design with bold headings and spacing.',
-    },
-    {
-      id: 'creative',
-      name: 'Creative',
-      description: 'For designers and creative roles. Eye-catching layout.',
-    },
-  ];
+  const navigate = useNavigate();
+
+  const handleUseTemplate = (template: string) => {
+    navigate(`/builder?template=${template}`);
+  };
 
   return (
-    <div className="max-w-6xl mx-auto py-16 px-6">
-      <h2 className="text-3xl font-bold text-center mb-12">Choose a Resume Template</h2>
-      <div className="grid md:grid-cols-3 gap-8">
-        {templates.map((template) => (
-          <div
-            key={template.id}
-            className="bg-white rounded-xl shadow-md p-6 flex flex-col justify-between"
-          >
-            <div>
-              <div className="h-40 bg-gray-100 rounded mb-4 flex items-center justify-center text-gray-400">
-                [ Preview ]
-              </div>
-              <h3 className="text-xl font-semibold mb-2">{template.name}</h3>
-              <p className="text-gray-600 text-sm">{template.description}</p>
-            </div>
-            <Link
-              to={`/builder?template=${template.id}`}
-              className="mt-6 bg-blue-600 hover:bg-blue-700 text-white text-center py-2 rounded-lg transition"
-            >
-              Use Template
-            </Link>
+    <div className="max-w-5xl mx-auto px-6 py-10">
+      <h2 className="text-3xl font-bold text-center mb-8">Choose a Resume Template</h2>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Classic Template Card */}
+        <div className="bg-white p-4 rounded shadow text-center">
+          <div className="h-64 overflow-auto border rounded bg-gray-50 mb-4 p-3">
+            <ClassicTemplate
+              name="Your Name"
+              job="Web Developer"
+              experience="3+ years experience building responsive web applications and user interfaces."
+              skills="HTML, CSS, JavaScript, React"
+            />
           </div>
-        ))}
+          <h3 className="font-semibold text-lg">Classic</h3>
+          <p className="text-sm text-gray-500 mb-4">Clean, timeless format for professionals.</p>
+          <button
+            onClick={() => handleUseTemplate('classic')}
+            className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+          >
+            Use Template
+          </button>
+        </div>
       </div>
     </div>
   );
