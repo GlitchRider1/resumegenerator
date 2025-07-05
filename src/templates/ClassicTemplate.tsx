@@ -9,27 +9,23 @@ interface ClassicTemplateProps {
 
 const ClassicTemplate: React.FC<ClassicTemplateProps> = ({ name, job, skills, experience }) => {
   return (
-    <div className="w-full max-w-2xl mx-auto bg-white p-8 rounded shadow text-gray-900">
-      <header className="text-center mb-6">
-        <h1 className="text-3xl font-bold">{name || 'Your Name'}</h1>
-        <p className="text-lg text-gray-600">{job || 'Job Title'}</p>
-      </header>
+    <div className="bg-white p-6 rounded shadow text-gray-900">
+      <h1 className="text-2xl font-bold">{name || 'Your Name'}</h1>
+      <p className="text-sm text-gray-500 mb-4">{job || 'Job Title'}</p>
 
-      <section className="mb-6">
-        <h2 className="text-xl font-semibold border-b pb-1 mb-2">Experience</h2>
-        <p>{experience || 'Your work experience will appear here.'}</p>
-      </section>
+      <div className="mb-4">
+        <h2 className="font-semibold mb-1">Experience</h2>
+        <p>{experience || 'Your experience goes here.'}</p>
+      </div>
 
-      <section>
-        <h2 className="text-xl font-semibold border-b pb-1 mb-2">Skills</h2>
+      <div>
+        <h2 className="font-semibold mb-1">Skills</h2>
         <ul className="list-disc list-inside">
           {skills
-            ? skills.split(',').map((skill, index) => (
-                <li key={index}>{skill.trim()}</li>
-              ))
-            : <li>Example: Communication, Leadership, React</li>}
+            ? skills.split(',').map((skill, i) => <li key={i}>{skill.trim()}</li>)
+            : <li>Sample: HTML, CSS, JavaScript</li>}
         </ul>
-      </section>
+      </div>
     </div>
   );
 };
