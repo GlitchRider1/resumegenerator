@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import ClassicTemplate from '../templates/ClassicTemplate.tsx';
+import ClassicTemplate from '../templates/ClassicTemplate';
 
 const Builder: React.FC = () => {
   const location = useLocation();
@@ -21,27 +21,27 @@ const Builder: React.FC = () => {
   return (
     <div className="max-w-6xl mx-auto p-6 grid md:grid-cols-2 gap-6">
       <div>
-        <h2 className="text-2xl font-semibold mb-4">Resume Builder</h2>
+        <h2 className="text-2xl font-bold mb-4">Build Your Resume</h2>
         <input
-          className="input mb-3 w-full"
+          className="mb-3 w-full px-4 py-2 border border-gray-300 rounded"
           name="name"
           placeholder="Full Name"
           onChange={handleChange}
         />
         <input
-          className="input mb-3 w-full"
+          className="mb-3 w-full px-4 py-2 border border-gray-300 rounded"
           name="job"
           placeholder="Job Title"
           onChange={handleChange}
         />
         <input
-          className="input mb-3 w-full"
+          className="mb-3 w-full px-4 py-2 border border-gray-300 rounded"
           name="skills"
           placeholder="Skills (comma separated)"
           onChange={handleChange}
         />
         <textarea
-          className="input mb-3 w-full"
+          className="mb-3 w-full px-4 py-2 border border-gray-300 rounded"
           name="experience"
           placeholder="Experience"
           rows={4}
@@ -51,11 +51,7 @@ const Builder: React.FC = () => {
 
       <div className="bg-gray-100 p-4 rounded-lg shadow">
         <h3 className="text-lg font-medium mb-2 text-center">Live Resume Preview</h3>
-        <p className="text-red-500">Preview section is rendering</p>
-
-        {selectedTemplate === 'classic' && (
-          <ClassicTemplate {...form} />
-        )}
+        {selectedTemplate === 'classic' && <ClassicTemplate {...form} />}
       </div>
     </div>
   );
