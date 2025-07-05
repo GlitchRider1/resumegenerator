@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import ClassicTemplate from '../templates/ClassicTemplate';
+import ModernTemplate from '../templates/ModernTemplate';
+import CreativeTemplate from '../templates/CreativeTemplate';
 
 const Builder: React.FC = () => {
   const location = useLocation();
@@ -21,27 +23,27 @@ const Builder: React.FC = () => {
   return (
     <div className="max-w-6xl mx-auto p-6 grid md:grid-cols-2 gap-6">
       <div>
-        <h2 className="text-2xl font-bold mb-4">Build Your Resume</h2>
+        <h2 className="text-2xl font-semibold mb-4">Resume Builder</h2>
         <input
-          className="mb-3 w-full px-4 py-2 border border-gray-300 rounded"
+          className="input mb-3 w-full"
           name="name"
           placeholder="Full Name"
           onChange={handleChange}
         />
         <input
-          className="mb-3 w-full px-4 py-2 border border-gray-300 rounded"
+          className="input mb-3 w-full"
           name="job"
           placeholder="Job Title"
           onChange={handleChange}
         />
         <input
-          className="mb-3 w-full px-4 py-2 border border-gray-300 rounded"
+          className="input mb-3 w-full"
           name="skills"
           placeholder="Skills (comma separated)"
           onChange={handleChange}
         />
         <textarea
-          className="mb-3 w-full px-4 py-2 border border-gray-300 rounded"
+          className="input mb-3 w-full"
           name="experience"
           placeholder="Experience"
           rows={4}
@@ -51,7 +53,10 @@ const Builder: React.FC = () => {
 
       <div className="bg-gray-100 p-4 rounded-lg shadow">
         <h3 className="text-lg font-medium mb-2 text-center">Live Resume Preview</h3>
+
         {selectedTemplate === 'classic' && <ClassicTemplate {...form} />}
+        {selectedTemplate === 'modern' && <ModernTemplate {...form} />}
+        {selectedTemplate === 'creative' && <CreativeTemplate {...form} />}
       </div>
     </div>
   );
