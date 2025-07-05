@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import ClassicTemplate from '../templates/ClassicTemplate';
+import ClassicTemplate from '../templates/ClassicTemplate.tsx';
 
 const Builder: React.FC = () => {
   const location = useLocation();
@@ -51,12 +51,11 @@ const Builder: React.FC = () => {
 
       <div className="bg-gray-100 p-4 rounded-lg shadow">
         <h3 className="text-lg font-medium mb-2 text-center">Live Resume Preview</h3>
+        <p className="text-red-500">Preview section is rendering</p>
 
         {selectedTemplate === 'classic' && (
           <ClassicTemplate {...form} />
         )}
-
-        {/* Modern and Creative will be added later */}
       </div>
     </div>
   );
