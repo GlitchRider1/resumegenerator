@@ -1,4 +1,3 @@
-// File: src/templates/ModernTemplate.tsx
 import React from 'react';
 
 interface Props {
@@ -24,7 +23,7 @@ const ModernTemplate: React.FC<Props> = ({ name, job, skills, experience }) => {
         <ul className="list-disc list-inside text-sm text-gray-700">
           {skills ? skills.split(',').map((skill, index) => (
             <li key={index}>{skill.trim()}</li>
-          )) : <li>Sample: Leadership, Communication, JavaScript</li>}
+          )) : <li>Example: React, TypeScript, Git</li>}
         </ul>
       </div>
     </div>
